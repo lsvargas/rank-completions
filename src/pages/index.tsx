@@ -28,8 +28,6 @@ const Home: NextPage = () => {
     mutate({ promptValue: inputValue, completions });
   };
 
-  console.log(isLoading, isFetching)
-
   return (
     <>
       <Head><title>Completions Rank</title></Head>

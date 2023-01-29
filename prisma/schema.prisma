@@ -22,6 +22,7 @@ model Completion {
     id       Int  @id @default(autoincrement())
     rank     Int  @default(0)
     value    String
+    trained  Boolean @default(false)
     prompt   Prompt @relation(fields: [promptId], references: [id])
     promptId Int
 }
