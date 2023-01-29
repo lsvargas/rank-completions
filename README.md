@@ -6,7 +6,7 @@ touch .env
 ```
 And then add your OpenAI API Key and DB 
 ```
-// .env
+# .env
 
 
 DATABASE_URL=file:./db.sqlite
