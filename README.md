@@ -1,7 +1,16 @@
 # Rank and Edit Completions Assignment
 
-To run the project
+Before running the project you need to create `.env` file.
+```
+touch .env
+```
+And then add your OpenAI API Key and DB 
+```
+DATABASE_URL=file:./db.sqlite
+OPENAI_API_KEY=<YOUR-KEY>
+```
 
+To run the project
 ```
 yarn install
 npx prisma db push
