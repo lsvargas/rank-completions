@@ -1,0 +1,28 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+    provider = "prisma-client-js"
+}
+
+datasource db {
+    provider = "sqlite"
+    url      = env("DATABASE_URL")
+}
+
+model Prompt {
+    id          Int    @id @default(autoincrement())
+    value       String @unique
+    completions Completion[]
+
+    @@index(fields: [value])
+}
+
+model Completion {
+    id       Int  @id @default(autoincrement())
+    rank     Int  @default(0)
+    value    String
+    prompt   Prompt @relation(fields: [promptId], references: [id])
+    promptId Int
+}
+
